@@ -29,6 +29,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainMenuActivity extends AppCompatActivity {
+    private ArrayList<Clothes> renderClothesArrayList = new ArrayList<>();
     private final ArrayList<Clothes> clothesArrayList = new ArrayList<>();
     private ClothesAdapter clothesAdapter;
     private static final int REQUEST_LABEL_IMAGE_CAPTURE = 1;
@@ -43,7 +44,7 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         RecyclerView recyclerView = findViewById(R.id.clothes_list);
-        clothesAdapter = new ClothesAdapter(LayoutInflater.from(this), clothesArrayList);
+        clothesAdapter = new ClothesAdapter(LayoutInflater.from(this), renderClothesArrayList);
         recyclerView.setAdapter(clothesAdapter);
     }
 
@@ -70,8 +71,8 @@ public class MainMenuActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap clothesBitmap = (Bitmap) extras.get("data");
             Clothes newClothes = newClothesBuilder.setPhoto(clothesBitmap).setName("Вещь").build();
-            clothesArrayList.add(newClothes);
-            clothesAdapter.notifyItemInserted(clothesArrayList.size()-1);
+            renderClothesArrayList.add(newClothes);
+            clothesAdapter.notifyItemInserted(renderClothesArrayList.size()-1);
         }
     }
 

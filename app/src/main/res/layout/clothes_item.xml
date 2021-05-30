@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="112dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     android:layout_margin="8dp"
     android:paddingBottom="4dp"
     android:background="@drawable/my_custom_background"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:gravity="center"
+    >
 
     <ImageView
         android:id="@+id/clothes_photo_preview"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
         android:layout_marginVertical="8dp"
-        android:src="@drawable/p10423_165632" />
+        android:src="@drawable/p10423_165632"
+        android:scaleType="centerCrop"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/clothes_name"
@@ -25,7 +29,9 @@
             android:layout_height="wrap_content"
             android:text="Свитер томми хилфигер"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/clothes_description"
@@ -33,6 +39,9 @@
             android:layout_height="wrap_content"
             android:text="Мой любимый"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="1sp"
+            android:visibility="gone"
+            />
+
     </LinearLayout>
 </LinearLayout>
