@@ -19,6 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/add_check"
                 app:layout_constraintLeft_toRightOf="@id/my_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/my_item"
@@ -46,6 +47,7 @@
 
 
         <EditText
+            android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -58,6 +60,7 @@
             android:textSize="12pt" />
 
         <ImageView
+            android:id="@+id/item_pic"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -75,18 +78,21 @@
             android:textSize="28sp" />
 
         <ImageView
+            android:id="@+id/birk_pic"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="@drawable/my_custom_background"
             android:scaleType="center"
             android:src="@drawable/camera_add_item" />
+
         <View
             android:layout_marginTop="30dp"
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="@color/black" />
         <ImageButton
+            android:id="@+id/back_add"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
