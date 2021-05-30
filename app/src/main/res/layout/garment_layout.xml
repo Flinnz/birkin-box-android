@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/clothes_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Вещь"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/clothes_photo_preview"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/p10423_165632" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Правила стирки:"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/washing_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Стирка при 30 С\nОтбеливание запрещено\nМашинная сушка запрещена\nГлажка запрещена\nСухая химчиста запрещена"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Бирка"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/my_custom_background"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/wash_30" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/only_oxygen_bleach" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lower_tumble" />
+
+            <ImageView
+                android:layout_width="37dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/do_not_iron" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/do_not_dry_clean" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/label_photo"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/text_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/birka" />
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
