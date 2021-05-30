@@ -5,7 +5,8 @@
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BirkinBox"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".AddItemActivity"
+            android:label="@string/title_activity_add_item"
+            android:theme="@style/Theme.BirkinBox.NoActionBar"></activity>
         <activity android:name=".MainMenuActivity" />
         <activity
             android:name=".SplashActivity"
