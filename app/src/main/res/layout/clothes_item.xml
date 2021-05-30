@@ -3,47 +3,46 @@
     android:layout_width="150dp"
     android:layout_height="150dp"
     android:layout_margin="8dp"
-    android:paddingBottom="4dp"
     android:background="@drawable/my_custom_background"
-    android:orientation="vertical"
-    android:gravity="center"
     android:clickable="true"
-    >
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="4dp">
 
     <ImageView
         android:id="@+id/clothes_photo_preview"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginVertical="8dp"
-        android:src="@drawable/p10423_165632"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/p10423_165632" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <ImageButton
+        <Button
+            android:id="@+id/delete_item"
             android:layout_width="95dp"
             android:layout_height="30dp"
-            android:textSize="14sp"
-            android:visibility="gone"
-            android:src="@drawable/delete_button"
-            android:scaleType="centerCrop"
             android:background="#0000"
-            >
-        </ImageButton>
+            android:scaleType="centerCrop"
+            android:src="@drawable/delete_button"
+            android:text="Удалить"
+            android:textSize="18sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/clothes_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="Свитер томми хилфигер"
-            android:textColor="@color/black"
-            android:textSize="14sp"
             android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/clothes_description"
@@ -52,8 +51,7 @@
             android:text="Мой любимый"
             android:textColor="@color/black"
             android:textSize="1sp"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
     </LinearLayout>
 </LinearLayout>

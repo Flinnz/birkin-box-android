@@ -63,7 +63,8 @@
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/trash_can" />
+        app:srcCompat="@drawable/trash_can"
+        />
 
     <ImageButton
         android:id="@+id/imageButton2"
