@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +38,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         holder.photoView.setImageBitmap(clothes.clothesPhoto);
         holder.nameView.setText(clothes.name);
         holder.descriptionView.setText(clothes.description);
+        holder.clothesAdapter = this;
     }
 
     @Override
@@ -49,6 +51,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         final TextView nameView;
         final TextView descriptionView;
         int clothesPosition;
+        ClothesAdapter clothesAdapter;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +65,14 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
             this.photoView = (ImageView)itemView.findViewById(R.id.clothes_photo_preview);
             this.nameView = (TextView) itemView.findViewById(R.id.clothes_name);
             this.descriptionView = (TextView)itemView.findViewById(R.id.clothes_description);
-//            itemView.findViewById(R.id.)
+            Button button = (Button)itemView.findViewById(R.id.delete_item);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clothesAdapter.clothesList.remove(clothesPosition);
+                    clothesAdapter.notifyItemRemoved(clothesPosition);
+                }
+            });
         }
     }
 }
