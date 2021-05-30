@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:layout_margin="8dp"
+    android:paddingBottom="4dp"
+    android:background="@drawable/my_custom_background"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/clothes_photo_preview"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginVertical="8dp"
+        android:src="@drawable/p10423_165632" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/clothes_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Свитер томми хилфигер"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clothes_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мой любимый"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>
