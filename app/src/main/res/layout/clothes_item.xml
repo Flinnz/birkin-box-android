@@ -24,6 +24,17 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <ImageButton
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:src="@drawable/delete_button"
+            android:scaleType="centerCrop"
+            android:background="#0000"
+            >
+        </ImageButton>
+
         <TextView
             android:id="@+id/clothes_name"
             android:layout_width="wrap_content"

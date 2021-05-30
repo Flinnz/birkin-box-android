@@ -33,6 +33,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Clothes clothes = clothesList.get(position);
+        holder.clothesPosition = position;
         holder.photoView.setImageBitmap(clothes.clothesPhoto);
         holder.nameView.setText(clothes.name);
         holder.descriptionView.setText(clothes.description);
@@ -47,6 +48,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         final ImageView photoView;
         final TextView nameView;
         final TextView descriptionView;
+        int clothesPosition;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
             this.photoView = (ImageView)itemView.findViewById(R.id.clothes_photo_preview);
             this.nameView = (TextView) itemView.findViewById(R.id.clothes_name);
             this.descriptionView = (TextView)itemView.findViewById(R.id.clothes_description);
+//            itemView.findViewById(R.id.)
         }
     }
 }
