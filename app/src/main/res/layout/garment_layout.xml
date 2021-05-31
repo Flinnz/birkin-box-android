@@ -123,7 +123,7 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/text_margin"
             android:scaleType="centerCrop"
-            android:src="@drawable/birka" />
+            android:src="@drawable/no_photo" />
 
 
     </LinearLayout>

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -77,9 +78,15 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
                 ClothesWithLaundryRules clothesWithLaundryRules = clothesAdapter.clothesList.get(clothesPosition);
                 Context context = v.getContext();
                 Intent intent = new Intent(context, GarmentActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putLong("id", clothesWithLaundryRules.clothes.clothesId);
-                context.startActivity(intent, bundle);
+                int[] drawables = new int[clothesWithLaundryRules.laundryRules.size()];
+                String[] descs = new String[clothesWithLaundryRules.laundryRules.size()];
+                intent.putExtra("drawables", drawables);
+                intent.putExtra("descs", descs);
+                intent.putExtra("clothesId", clothesWithLaundryRules.clothes.clothesId);
+                intent.putExtra("labelPhoto", clothesWithLaundryRules.clothes.labelPhoto.path);
+                intent.putExtra("clothesPhoto", clothesWithLaundryRules.clothes.clothesPhoto.path);
+
+                context.startActivity(intent);
             }
         };
 
