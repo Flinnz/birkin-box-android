@@ -17,12 +17,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BirkinBox"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GarmentActivity"></activity>
+        <activity android:name=".manual_decryption">
+            android:screenOrientation="portrait"
+        </activity>
+        <activity android:name=".GarmentActivity">
+            android:screenOrientation="portrait"
+        </activity>
         <activity
             android:name=".AddItemActivity"
             android:label="@string/title_activity_add_item"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.BirkinBox.NoActionBar" />
+        <activity android:name=".MainMenuActivity" />
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.BirkinBox.NoActionBar" />
         <activity
             android:name=".MainMenuActivity"
             android:screenOrientation="portrait" />

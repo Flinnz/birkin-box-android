@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".manual_decryption">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/manual_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:text="Ручная расшифровка"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/my_custom_background"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/dont_wash_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dont_wash" />
+                    <ImageView
+                        android:id="@+id/hand_wash_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/hand_wash" />
+                    <ImageView
+                        android:id="@+id/wash_30_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_30" />
+                    <ImageView
+                        android:id="@+id/wash_40_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_40" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/wash_50_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_50" />
+                    <ImageView
+                        android:id="@+id/wash_60_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_60" />
+                    <ImageView
+                        android:id="@+id/wash_70_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_70" />
+                    <ImageView
+                        android:id="@+id/wash_95_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wash_95" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_custom_background"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/any_bleach_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/any_bleach" />
+                <ImageView
+                    android:id="@+id/only_oxygen_bleach_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/only_oxygen_bleach" />
+                <ImageView
+                    android:id="@+id/dont_bleach_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dont_bleach" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/my_custom_background"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/dont_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dont_tumble" />
+                    <ImageView
+                        android:id="@+id/lower_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/lower_tumble" />
+                    <ImageView
+                        android:id="@+id/normal_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/normal_tumble" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/line_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/line_dry" />
+                    <ImageView
+                        android:id="@+id/flat_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/flat_dry" />
+                    <ImageView
+                        android:id="@+id/drip_tumble_id"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/drip_dry" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_custom_background"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/do_not_iron_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/do_not_iron" />
+                <ImageView
+                    android:id="@+id/low_temperature_ironing_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/low_temperature_ironing" />
+                <ImageView
+                    android:id="@+id/medium_temperature_ironing_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/medium_temperature_ironing" />
+                <ImageView
+                    android:id="@+id/max_temperature_ironing_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/max_temperature_ironing" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_custom_background"
+                android:gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/f_drycleaning_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/f_drycleaning" />
+                <ImageView
+                    android:id="@+id/p_drycleaning_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/p_drycleaning" />
+                <ImageView
+                    android:id="@+id/w_drycleaning_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/w_drycleaning" />
+                <ImageView
+                    android:id="@+id/dont_drycleaning_id"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/no_drycleaning" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
