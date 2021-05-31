@@ -52,61 +52,61 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="34dp"
-        android:layout_height="36dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="41dp"
         android:layout_marginLeft="41dp"
         android:layout_marginBottom="22dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/trash_can" />
+        app:srcCompat="@drawable/main_delete" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="22dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:srcCompat="@drawable/magnifying_glass" />
+        app:srcCompat="@drawable/main_search" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="33dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
         android:layout_marginBottom="22dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/settings" />
+        app:srcCompat="@drawable/main_settings" />
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="22dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:srcCompat="@drawable/funnel" />
+        app:srcCompat="@drawable/main_sort" />
 
     <ImageButton
         android:id="@+id/addClothesButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="11dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
         android:onClick="addClothesButtonOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton4"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:srcCompat="@drawable/plus" />
+        app:srcCompat="@drawable/add_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
