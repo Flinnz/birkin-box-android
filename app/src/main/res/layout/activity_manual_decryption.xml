@@ -51,6 +51,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/dont_wash" />
 
@@ -60,6 +61,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/hand_wash" />
 
@@ -69,6 +71,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_30" />
 
@@ -78,6 +81,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_40" />
                 </LinearLayout>
@@ -92,6 +96,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_50" />
 
@@ -101,6 +106,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_60" />
 
@@ -110,6 +116,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_70" />
 
@@ -119,6 +126,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/wash_95" />
                 </LinearLayout>
@@ -137,6 +145,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/any_bleach" />
 
@@ -146,14 +155,17 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/only_oxygen_bleach" />
+
                 <ImageView
                     android:id="@+id/dont_bleach_id"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/dont_bleach" />
 
@@ -178,6 +190,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/dont_tumble" />
 
@@ -187,14 +200,17 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/lower_tumble" />
+
                     <ImageView
                         android:id="@+id/normal_tumble_id"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/normal_tumble" />
                 </LinearLayout>
@@ -209,6 +225,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/line_dry" />
 
@@ -218,6 +235,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/flat_dry" />
 
@@ -227,6 +245,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/text_margin"
+                        android:clickable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/drip_dry" />
 
@@ -247,6 +266,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
                     android:adjustViewBounds="true"
+                    android:clickable="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/do_not_iron" />
 
@@ -256,6 +276,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/low_temperature_ironing" />
 
@@ -265,6 +286,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/medium_temperature_ironing" />
 
@@ -274,6 +296,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/max_temperature_ironing" />
 
@@ -292,6 +315,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/f_drycleaning" />
 
@@ -301,6 +325,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/p_drycleaning" />
 
@@ -310,6 +335,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/w_drycleaning" />
 
@@ -319,6 +345,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/text_margin"
+                    android:clickable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/no_drycleaning" />
 
