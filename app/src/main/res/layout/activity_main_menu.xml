@@ -35,13 +35,16 @@
             android:layout_height="wrap_content"
 
             android:orientation="vertical">
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/clothes_list"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="40dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
 
             <TextView
                 android:id="@+id/responseTextView"
@@ -60,7 +63,8 @@
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/trash_can" />
+        app:srcCompat="@drawable/trash_can"
+        />
 
     <ImageButton
         android:id="@+id/imageButton2"

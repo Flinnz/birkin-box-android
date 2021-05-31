@@ -1,5 +1,7 @@
 package ru.birkin.team.android;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,11 +47,21 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         final ImageView photoView;
         final TextView nameView;
         final TextView descriptionView;
+        int clothesPosition;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, GarmentActivity.class);
+                    context.startActivity(intent);
+                }
+            });
             this.photoView = (ImageView)itemView.findViewById(R.id.clothes_photo_preview);
             this.nameView = (TextView) itemView.findViewById(R.id.clothes_name);
             this.descriptionView = (TextView)itemView.findViewById(R.id.clothes_description);
+//            itemView.findViewById(R.id.)
         }
     }
 }
