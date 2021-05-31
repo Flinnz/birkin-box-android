@@ -14,9 +14,9 @@ import java.util.List;
 public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHolder> {
 
     private final LayoutInflater inflater;
-    private final List<Clothes> clothesList;
+    private final List<ClothesWithLaundryRules> clothesList;
 
-    public ClothesAdapter(LayoutInflater inflater, List<Clothes> clothes) {
+    public ClothesAdapter(LayoutInflater inflater, List<ClothesWithLaundryRules> clothes) {
         this.inflater = inflater;
         this.clothesList = clothes;
     }
@@ -30,10 +30,10 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Clothes clothes = clothesList.get(position);
-        holder.photoView.setImageBitmap(clothes.clothesPhoto);
-        holder.nameView.setText(clothes.name);
-        holder.descriptionView.setText(clothes.description);
+        ClothesWithLaundryRules clothes = clothesList.get(position);
+        holder.photoView.setImageBitmap(clothes.clothes.clothesPhoto.bitmap);
+        holder.nameView.setText(clothes.clothes.name);
+        holder.descriptionView.setText(clothes.clothes.description);
     }
 
     @Override

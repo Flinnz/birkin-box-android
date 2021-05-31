@@ -3,11 +3,11 @@ package ru.birkin.team.android;
 import android.graphics.Bitmap;
 
 public class ClothesBuilder {
-    private Bitmap photo;
+    private BitmapWithPath photo;
     private String name;
     private String description;
 
-    public ClothesBuilder setPhoto(Bitmap photo) {
+    public ClothesBuilder setPhoto(BitmapWithPath photo) {
         this.photo = photo;
         return this;
     }
