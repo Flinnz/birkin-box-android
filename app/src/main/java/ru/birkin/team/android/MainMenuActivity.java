@@ -8,6 +8,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +75,15 @@ public class MainMenuActivity extends AppCompatActivity {
                     }
                 });
         RecyclerView recyclerView = findViewById(R.id.clothes_list);
+        ImageButton deleteButton = (ImageButton) findViewById(R.id.imageButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clothesAdapter.deleteMode = !clothesAdapter.deleteMode;
+                Toast.makeText(v.getContext(), "click", Toast.LENGTH_SHORT).show();
+                clothesAdapter.notifyDataSetChanged();
+            }
+        });
         clothesAdapter = new ClothesAdapter(LayoutInflater.from(this), clothesArrayList);
         recyclerView.setAdapter(clothesAdapter);
     }

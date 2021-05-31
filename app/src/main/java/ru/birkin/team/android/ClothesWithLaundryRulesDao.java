@@ -20,4 +20,11 @@ public interface ClothesWithLaundryRulesDao {
     @Transaction
     @Query("SELECT * FROM Clothes")
     Flowable<List<ClothesWithLaundryRules>> getClothesWithRules();
+
+    @Transaction
+    @Query("SELECT * FROM Clothes WHERE clothesId = :id")
+    Flowable<ClothesWithLaundryRules> getClothesWithRulesById(long id);
+
+    @Query("DELETE FROM ClothesLaundryRuleRef WHERE clothesId = :id")
+    Completable removeClothesReferences(long id);
 }
