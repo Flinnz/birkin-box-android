@@ -89,9 +89,10 @@ public class AddItemActivity extends AppCompatActivity {
                     showButton();
                     return;
                 }
-                Bundle bundle = getFinalBundle();
+
                 Intent intent = new Intent(v.getContext(), manual_decryption.class);
-                v.getContext().startActivity(intent, bundle);
+                getFinalBundle(intent);
+                v.getContext().startActivity(intent);
             }
         });
         nameEditText.addTextChangedListener(new TextWatcher() {
@@ -162,15 +163,13 @@ public class AddItemActivity extends AppCompatActivity {
         }
     }
 
-    private Bundle getFinalBundle() {
-        Bundle bundle = new Bundle();
+    private void getFinalBundle(Intent intent) {
         String labelPhotoPath = savePhoto(this.labelPhotoWithPath);
         String clothesPhotoPath = savePhoto(this.clothesPhotoWithPath);
         String name = this.name;
-        bundle.putString("labelPhotoPath", labelPhotoPath);
-        bundle.putString("clothesPhotoPath", clothesPhotoPath);
-        bundle.putString("name", name);
-        return bundle;
+        intent.putExtra("labelPhotoPath", labelPhotoPath);
+        intent.putExtra("clothesPhotoPath", clothesPhotoPath);
+        intent.putExtra("name", name);
     }
 
     private String savePhoto(BitmapWithPath photo) {

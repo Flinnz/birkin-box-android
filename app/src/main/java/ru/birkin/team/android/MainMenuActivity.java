@@ -103,6 +103,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void addClothesButtonOnClick(View view) {
         Intent intent = new Intent(this, AddItemActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         try {
             startActivity(intent);
         } catch (Exception e) {

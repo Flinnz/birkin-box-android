@@ -42,7 +42,13 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ClothesWithLaundryRules clothes = clothesList.get(position);
-        holder.photoView.setImageBitmap(clothes.clothes.clothesPhoto.bitmap);
+        if (clothes.clothes != null) {
+            if (clothes.clothes.clothesPhoto != null) {
+                if (clothes.clothes.clothesPhoto.bitmap != null) {
+                    holder.photoView.setImageBitmap(clothes.clothes.clothesPhoto.bitmap);
+                }
+            }
+        }
         holder.nameView.setText(clothes.clothes.name);
         holder.descriptionView.setText(clothes.clothes.description);
         holder.clothesPosition = position;
