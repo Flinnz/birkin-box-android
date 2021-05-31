@@ -16,10 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BirkinBox"
         android:usesCleartextTraffic="true">
+        <activity android:name=".manual_decryption"></activity>
         <activity
             android:name=".AddItemActivity"
             android:label="@string/title_activity_add_item"
-            android:theme="@style/Theme.BirkinBox.NoActionBar"></activity>
+            android:theme="@style/Theme.BirkinBox.NoActionBar" />
         <activity android:name=".MainMenuActivity" />
         <activity
             android:name=".SplashActivity"

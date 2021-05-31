@@ -85,19 +85,5 @@
             android:background="@drawable/my_custom_background"
             android:scaleType="center"
             android:src="@drawable/camera_add_item" />
-
-        <View
-            android:layout_marginTop="30dp"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/black" />
-        <ImageButton
-            android:id="@+id/back_add"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/back"
-           />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
