@@ -31,9 +31,6 @@
         android:screenOrientation="portrait"
         android:theme="@style/Theme.BirkinBox.NoActionBar" />
         <activity
-            android:name=".MainMenuActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
