@@ -28,6 +28,8 @@
         <activity
             android:name=".MainMenuActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".manual_decryption"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"

@@ -18,7 +18,7 @@ public class BirkinBoxApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        database = Room.databaseBuilder(this, ClothesDatabase.class, "database")
+        database = Room.databaseBuilder(this, ClothesDatabase.class, "birkinbox")
                 .build();
         Map<String, LaundryRule> laundryRules = new HashMap<>();
         laundryRules.put("wash_30", new LaundryRule("wash_30", "Стирка при 30 градусов", R.drawable.wash_30));

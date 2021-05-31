@@ -54,26 +54,13 @@ public class MainMenuActivity extends AppCompatActivity {
     private static final MediaType MEDIA_TYPE_PNG = MediaType.get("image/png");
     private final ClothesBuilder newClothesBuilder = new ClothesBuilder();
     private final OkHttpClient client = new OkHttpClient();
+    private Disposable clothesDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        BirkinBoxApplication
-                .getInstance()
-                .getDatabase()
-                .clothesWithLaundryRulesDao()
-                .getClothesWithRules()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Consumer<List<ClothesWithLaundryRules>>() {
-                    @Override
-                    public void accept(List<ClothesWithLaundryRules> clothesWithLaundryRules) throws Throwable {
-                        clothesArrayList.clear();
-                        clothesArrayList.addAll(clothesWithLaundryRules);
-                        clothesAdapter.notifyDataSetChanged();
-                    }
-                });
+
         RecyclerView recyclerView = findViewById(R.id.clothes_list);
         ImageButton deleteButton = (ImageButton) findViewById(R.id.imageButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +75,36 @@ public class MainMenuActivity extends AppCompatActivity {
         recyclerView.setAdapter(clothesAdapter);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        clothesDb = BirkinBoxApplication
+                .getInstance()
+                .getDatabase()
+                .clothesWithLaundryRulesDao()
+                .getClothesWithRules()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<List<ClothesWithLaundryRules>>() {
+                    @Override
+                    public void accept(List<ClothesWithLaundryRules> clothesWithLaundryRules) throws Throwable {
+                        clothesArrayList.clear();
+                        clothesArrayList.addAll(clothesWithLaundryRules);
+                        clothesAdapter.notifyDataSetChanged();
+                    }
+                });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        clothesDb.dispose();
+    }
+
     public void addClothesButtonOnClick(View view) {
-        Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent(this, AddItemActivity.class);
         try {
-            startActivityForResult(takePhotoIntent, REQUEST_LABEL_IMAGE_CAPTURE);
+            startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
         }
