@@ -1,10 +1,17 @@
 package ru.birkin.team.android;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BlendMode;
+import android.graphics.BlendModeColorFilter;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,17 +52,18 @@ public class manual_decryption extends AppCompatActivity {
             this.list = list;
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         public void onClick(View v) {
             if (prevChosen != null) {
                 ImageView imgV = list.get(prevChosen.chosen);
                 if (imgV != null) {
-                    imgV.setScaleType(ImageView.ScaleType.CENTER_CROP); //поменять надо тут
+                    imgV.setColorFilter(Color.TRANSPARENT);
                 }
             }
             ImageView imgV = list.get(nextChosen);
             if (imgV != null) {
-                imgV.setScaleType(ImageView.ScaleType.FIT_END); //поменять надо тут
+                imgV.setColorFilter(Color.parseColor("#66000000"));
             }
             prevChosen.chosen = nextChosen;
         }

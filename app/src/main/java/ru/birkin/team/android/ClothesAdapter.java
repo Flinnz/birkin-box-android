@@ -2,6 +2,7 @@ package ru.birkin.team.android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.File;
@@ -18,6 +20,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -27,17 +31,27 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
     private final LayoutInflater inflater;
     public boolean deleteMode = false;
     private final List<ClothesWithLaundryRules> clothesList;
+    private BiConsumer<Integer, ClothesAdapter> onAdd;
 
-    public ClothesAdapter(LayoutInflater inflater, List<ClothesWithLaundryRules> clothes) {
+    public ClothesAdapter(LayoutInflater inflater,
+                          List<ClothesWithLaundryRules> clothes) {
         this.inflater = inflater;
         this.clothesList = clothes;
+        this.onAdd = null;
+    }
+
+    public ClothesAdapter(LayoutInflater inflater,
+                          List<ClothesWithLaundryRules> clothes,
+                          BiConsumer<Integer, ClothesAdapter> onAdd) {
+        this(inflater, clothes);
+        this.onAdd = onAdd;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.clothes_item, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, onAdd);
     }
 
     @Override
@@ -89,6 +103,13 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
                 context.startActivity(intent);
             }
         };
+        final View.OnClickListener addViewClick = new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                onAdd.accept(clothesPosition, clothesAdapter);
+            }
+        };
 
         final View.OnClickListener deleteClick = new View.OnClickListener() {
             @Override
@@ -119,14 +140,24 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         private int clothesPosition;
         private ClothesAdapter clothesAdapter;
         private boolean deleteMode;
+        private BiConsumer<Integer, ClothesAdapter> onAdd = null;
         public ViewHolder(@NonNull View itemView) {
+            this(itemView, null);
+        }
+        public ViewHolder(@NonNull View itemView, BiConsumer<Integer, ClothesAdapter> onAdd) {
             super(itemView);
-            itemView.setOnClickListener(viewClick);
+            if (onAdd == null) {
+                itemView.setOnClickListener(viewClick);
+            }
             this.photoView = (ImageView)itemView.findViewById(R.id.clothes_photo_preview);
             this.nameView = (TextView) itemView.findViewById(R.id.clothes_name);
             this.descriptionView = (TextView)itemView.findViewById(R.id.clothes_description);
             button = (Button) itemView.findViewById(R.id.delete_item);
             button.setOnClickListener(deleteClick);
+            this.onAdd = onAdd;
+            if (onAdd != null) {
+                itemView.setOnClickListener(addViewClick);
+            }
         }
     }
 }

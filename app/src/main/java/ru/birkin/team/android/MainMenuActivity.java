@@ -3,6 +3,7 @@ package ru.birkin.team.android;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -62,6 +63,18 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         RecyclerView recyclerView = findViewById(R.id.clothes_list);
+        ImageButton filterButton = (ImageButton) findViewById(R.id.imageButton4);
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), LaundryActivity.class);
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         ImageButton deleteButton = (ImageButton) findViewById(R.id.imageButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,7 +201,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void sendImage(byte[] imageBytes) {
         final TextView textView = findViewById(R.id.responseTextView);
-        String url = "http://185.246.66.34:8081/api/decodeLaundryTag";
+        String url = "http://localhost:5000/api/decodeLaundryTag";
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", UUID.randomUUID().toString() + ".png",

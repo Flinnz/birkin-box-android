@@ -7,10 +7,10 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
-        android:name="ru.birkin.team.android.BirkinBoxApplication"
+        android:name=".BirkinBoxApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BirkinBox"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GarmentActivity"></activity>
+        <activity
+            android:name=".LaundryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BirkinBox.NoActionBar" />
+        <activity
+            android:name=".LaundrySetActivity"
+            android:exported="false"
+            android:label="@string/title_activity_laundry_set"
+            android:theme="@style/Theme.BirkinBox.NoActionBar" />
+        <activity android:name=".GarmentActivity" />
         <activity
             android:name=".AddItemActivity"
             android:label="@string/title_activity_add_item"
@@ -28,8 +37,9 @@
         <activity
             android:name=".MainMenuActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".manual_decryption"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".manual_decryption"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"

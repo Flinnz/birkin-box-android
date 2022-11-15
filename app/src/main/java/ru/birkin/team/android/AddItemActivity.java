@@ -185,7 +185,7 @@ public class AddItemActivity extends AppCompatActivity {
 
     private void sendImage(byte[] imageBytes) {
         //final TextView textView = findViewById(R.id.responseTextView);
-        String url = "http://185.246.66.34:8081/api/decodeLaundryTag";
+        String url = "http://192.168.0.27:5000/api/decodeLaundryTag";
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", UUID.randomUUID().toString() + ".png",
@@ -208,9 +208,9 @@ public class AddItemActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                String desc = response.body().string();
                 runOnUiThread(() -> {
                     try {
-                        String desc = response.body().string();
                         JSONObject jobject = new JSONObject(desc);
                         newClothesBuilder.setDescription(desc);
                     } catch (Exception e) {
